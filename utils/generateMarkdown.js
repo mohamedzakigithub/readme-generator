@@ -34,7 +34,7 @@ ${data.tests}
 
 For questions please contact the project owner
 
-<img src="${data.avatar_url}" style="height:100px"/>
+<img src="${data.avatar_url}" style="height:50px"/>
 <br>
 Email: <a href="mailto:${data.email}">${data.email}</a>
 
