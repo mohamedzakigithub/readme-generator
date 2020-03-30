@@ -1,26 +1,25 @@
 const axios = require("axios");
+require("dotenv").config();
+
+const githubUsername = process.env.GITHUB_USERNAME;
+const githubPassword = process.env.GITHUB_PASSWORD;
 
 const api = {
-  async getUser(username, password) {
+  async getUser(username) {
     try {
-      const user = await axios.get("https://api.github.com/user", {
-        auth: {
-          username: username,
-          password: password
+      const userData = await axios.get(
+        "https://api.github.com/users/" + username,
+        {
+          auth: {
+            username: githubUsername,
+            password: githubPassword
+          }
         }
-      });
-
-      const emails = await axios.get("https://api.github.com/user/emails", {
-        auth: {
-          username: username,
-          password: password
-        }
-      });
-      const { avatar_url } = user.data;
-      const { email } = emails.data.filter(obj => obj.primary === true)[0];
+      );
+      const { email, avatar_url } = userData.data;
       return { email, avatar_url };
     } catch (error) {
-      return console.log("API Error: " + error.response.statusText);
+      return console.log(error);
     }
   }
 };

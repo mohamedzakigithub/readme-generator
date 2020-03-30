@@ -2,9 +2,6 @@ var fs = require("fs");
 var inquirer = require("inquirer");
 var api = require("./utils/api");
 var generateMarkdown = require("./utils/generateMarkdown");
-require("dotenv").config();
-
-const password = process.env.githubPassword;
 
 const usernameInquiry = [
   {
@@ -63,10 +60,7 @@ async function writeToFile(fileName, data) {
 async function init() {
   try {
     const username = await inquirer.prompt(usernameInquiry);
-    const { email, avatar_url } = await api.getUser(
-      username.username,
-      password
-    );
+    const { email, avatar_url } = await api.getUser(username.username);
     console.log("User data loaded successfully");
     const readmeData = await inquirer.prompt(readmeInquiry);
     readmeData.username = username.username;
@@ -74,7 +68,7 @@ async function init() {
     readmeData.avatar_url = avatar_url;
     writeToFile(readmeData.title + ".md", readmeData);
   } catch (error) {
-    console.error("Something went wrong, Cannot retrieve user data!");
+    console.error(error);
   }
 }
 
