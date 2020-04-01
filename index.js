@@ -65,10 +65,10 @@ async function init() {
     const readmeData = await inquirer.prompt(readmeInquiry);
     readmeData.username = user.githubUser;
     readmeData.avatar_url = avatar_url;
-    if (email != "null") {
-      readmeData.email = email;
-    } else {
+    if (email === null) {
       readmeData.email = "Private";
+    } else {
+      readmeData.email = email;
     }
     writeToFile(readmeData.title + ".md", readmeData);
   } catch (error) {

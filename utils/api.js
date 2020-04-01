@@ -19,7 +19,7 @@ const api = {
       const { email, avatar_url } = userData.data;
       return { email, avatar_url };
     } catch (error) {
-      return console.log(error);
+      return console.log("An error occurred: " + error.response.statusText);
     }
   }
 };
