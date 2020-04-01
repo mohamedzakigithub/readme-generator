@@ -68,7 +68,7 @@ async function init() {
     if (email === null) {
       readmeData.email = "Private";
     } else {
-      readmeData.email = email;
+      readmeData.email = `<a href="mailto:${email}">${email}</a>`;
     }
     writeToFile(readmeData.title + ".md", readmeData);
   } catch (error) {

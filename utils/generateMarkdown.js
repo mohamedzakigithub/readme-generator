@@ -32,13 +32,8 @@ ${data.tests}
 
 For questions please contact the project owner
 
-<img src="${data.avatar_url}" width="100"/>
-<br>
-<img alt="GitHub followers" src="https://img.shields.io/github/followers/${data.username}">
-<br>
-Gihthub profile: <a href="https://github.com/${data.username}">${data.username}</a>
-<br>
-Email: <a href="mailto:${data.email}">${data.email}</a>
+<img src="${data.avatar_url}" width="100"/><br/>
+Gihthub profile: <a href="https://github.com/${data.username}">${data.username}</a>   <img alt="GitHub followers" src="https://img.shields.io/github/followers/${data.username}"><br/>Email: ${data.email}
 
 `;
 }
