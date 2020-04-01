@@ -2,8 +2,6 @@ function generateMarkdown(data) {
   return `
 # ${data.title}
 
-<img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/${data.username}/${data.title}">
-
 ## Description
 ${data.description}
 
@@ -34,7 +32,11 @@ ${data.tests}
 
 For questions please contact the project owner
 
-<img src="${data.avatar_url}" style="height:50px"/>
+<img src="${data.avatar_url}" width="50"/>
+<br>
+<img alt="GitHub followers" src="https://img.shields.io/github/followers/${data.username}">
+<br>
+Gihthub profile: <a href="https://github.com/${data.username}">${data.username}</a>
 <br>
 Email: <a href="mailto:${data.email}">${data.email}</a>
 

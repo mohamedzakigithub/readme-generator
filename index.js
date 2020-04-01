@@ -3,10 +3,10 @@ var inquirer = require("inquirer");
 var api = require("./utils/api");
 var generateMarkdown = require("./utils/generateMarkdown");
 
-const usernameInquiry = [
+const githubUserInquiry = [
   {
     type: "input",
-    name: "username",
+    name: "githubUser",
     message: "Please enter your github user name:"
   }
 ];
@@ -15,7 +15,7 @@ const readmeInquiry = [
   {
     type: "input",
     name: "title",
-    message: "Please enter the project title / repository name:"
+    message: "Please enter the project title:"
   },
   {
     type: "input",
@@ -59,13 +59,17 @@ async function writeToFile(fileName, data) {
 
 async function init() {
   try {
-    const username = await inquirer.prompt(usernameInquiry);
-    const { email, avatar_url } = await api.getUser(username.username);
-    console.log("User data loaded successfully");
+    const user = await inquirer.prompt(githubUserInquiry);
+    const { email, avatar_url } = await api.getUser(user.githubUser);
+    console.log("github user data loaded successfully");
     const readmeData = await inquirer.prompt(readmeInquiry);
-    readmeData.username = username.username;
-    readmeData.email = email;
+    readmeData.username = user.githubUser;
     readmeData.avatar_url = avatar_url;
+    if (email != "null") {
+      readmeData.email = email;
+    } else {
+      readmeData.email = "Private";
+    }
     writeToFile(readmeData.title + ".md", readmeData);
   } catch (error) {
     console.error(error);

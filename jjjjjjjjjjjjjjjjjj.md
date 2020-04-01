@@ -1,10 +1,8 @@
 
-# weather-dashboard
-
-<img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/mohamedzakigithub/weather-dashboard">
+# jjjjjjjjjjjjjjjjjj
 
 ## Description
-fdgsdf
+fgds
 
 ## Table of Contents
 - [Installation](#Installation)
@@ -15,25 +13,29 @@ fdgsdf
 - [Questions](#Questions)
 
 ## Installation
-df
+sfd
 
 ## Usage
-dsf
+gd
 
 ## License
-
+sfg
 
 ## Contributing
-dsf
+ds
 
 ## Tests
-sdfgs
+ffdgdfg
 
 ## Questions
 
 For questions please contact the project owner
 
-<img src="https://avatars0.githubusercontent.com/u/31482588?v=4" style="height:50px"/>
+<img src="https://avatars0.githubusercontent.com/u/31482588?v=4" width="50"/>
+<br>
+<img alt="GitHub followers" src="https://img.shields.io/github/followers/mohamedzakigithub">
+<br>
+Gihthub profile: <a href="https://github.com/mohamedzakigithub">mohamedzakigithub</a>
 <br>
 Email: <a href="mailto:mohamedzaki@hotmail.com">mohamedzaki@hotmail.com</a>
 
