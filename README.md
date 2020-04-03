@@ -2,10 +2,15 @@
 
 A node.js CLI app to generate a readme.md file for a project using user inputs to populate default readme.md sections.
 
+- [Demo](#Demo)
 - [Installation](#Installation)
 - [Environmental variables setup](#Environmental-variables-setup)
 - [Usage](#Usage)
 - [Generated file contents](#Generated-file-contents)
+
+## Demo
+
+![](img/demo.gif)
 
 ## Installation
 
