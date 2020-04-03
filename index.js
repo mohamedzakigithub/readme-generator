@@ -1,8 +1,10 @@
+// Require the necessary nodea and local packages.
 var fs = require("fs");
 var inquirer = require("inquirer");
 var api = require("./utils/api");
 var generateMarkdown = require("./utils/generateMarkdown");
 
+// Inquirer prompt object for github username.
 const githubUserInquiry = [
   {
     type: "input",
@@ -11,6 +13,7 @@ const githubUserInquiry = [
   }
 ];
 
+// Inquirer prompt object for the readme sections.
 const readmeInquiry = [
   {
     type: "input",
@@ -35,7 +38,7 @@ const readmeInquiry = [
   {
     type: "input",
     name: "license",
-    message: "Please enter the licence:"
+    message: "Please enter the licence information:"
   },
   {
     type: "input",
@@ -49,18 +52,25 @@ const readmeInquiry = [
   }
 ];
 
+// A functionto write the generated readme file to the output folder.
 async function writeToFile(fileName, data) {
   const markdown = generateMarkdown(data);
-  fs.writeFile(fileName, markdown, err => {
+  fs.writeFile(`./output/${fileName}`, markdown, err => {
     if (err) throw err;
     console.log("Readme file generated successfully!");
   });
 }
 
+// The main function that pulls the user data and calll the functions to generate the readme file and write the file
+// to the disk
 async function init() {
   try {
     const user = await inquirer.prompt(githubUserInquiry);
-    const { email, avatar_url } = await api.getUser(user.githubUser);
+    const userData = await api.getUser(user.githubUser);
+    if (!userData) {
+      throw "Cannot find user";
+    }
+    const { email, avatar_url } = userData;
     console.log("github user data loaded successfully");
     const readmeData = await inquirer.prompt(readmeInquiry);
     readmeData.username = user.githubUser;
@@ -70,10 +80,11 @@ async function init() {
     } else {
       readmeData.email = `<a href="mailto:${email}">${email}</a>`;
     }
-    writeToFile(readmeData.title + ".md", readmeData);
+    writeToFile("README.md", readmeData);
   } catch (error) {
     console.error(error);
   }
 }
 
+// invoking the nit function.
 init();

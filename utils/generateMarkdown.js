@@ -1,3 +1,4 @@
+// A function using string literal to return the generated readme file with populated section.
 function generateMarkdown(data) {
   return `
 # ${data.title}
