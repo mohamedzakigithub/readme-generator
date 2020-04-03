@@ -17,7 +17,7 @@ npm install
 
 ## Environmental variables setup
 
-create .env file and add your github user name and password as per the example below. The app uses these data to access the github api. The .env file is included in the .gitignore file to stop it from being pushed to github for security.
+Open the .ev_example file and add your github user name and password as per the example below then rename the file to ( .env ). The app uses these data to access the github api. The .env file is included in the .gitignore file to stop it from being pushed to github for security.
 
 ```sh
 GITHUB_USERNAME = enter username here
