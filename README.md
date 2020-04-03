@@ -17,7 +17,7 @@ npm install
 
 ## Environmental variables setup
 
-create .env file and add your github user name and password as per the example belwo. The app uses these data to access the github api. The .env file is included in the .gitignore file to stop it from being pushed to github for security.
+create .env file and add your github user name and password as per the example below. The app uses these data to access the github api. The .env file is included in the .gitignore file to stop it from being pushed to github for security.
 
 ```sh
 GITHUB_USERNAME = enter username here
@@ -36,7 +36,7 @@ Then follow the command prompt to enter the requested information.
 
 ## Generated file contents
 
-The app will generate a README.md file in the output folder. The app will overwrite any existing README.md file preexisting in the output folder. The generated readme.md file will have the followin default sections.
+The app will generate a README.md file in the output folder. The app will overwrite any existing README.md file preexisting in the output folder. The generated readme.md file will have the following default sections.
 
 - Installation
 - Usage

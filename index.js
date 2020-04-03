@@ -1,4 +1,4 @@
-// Require the necessary nodea and local packages.
+// Require the necessary node a and local packages.
 var fs = require("fs");
 var inquirer = require("inquirer");
 var api = require("./utils/api");
@@ -52,7 +52,7 @@ const readmeInquiry = [
   }
 ];
 
-// A functionto write the generated readme file to the output folder.
+// A function to write the generated readme file to the output folder.
 async function writeToFile(fileName, data) {
   const markdown = generateMarkdown(data);
   fs.writeFile(`./output/${fileName}`, markdown, err => {
@@ -61,7 +61,7 @@ async function writeToFile(fileName, data) {
   });
 }
 
-// The main function that pulls the user data and calll the functions to generate the readme file and write the file
+// The main function that pulls the user data and call the functions to generate the readme file and write the file
 // to the disk
 async function init() {
   try {
@@ -86,5 +86,5 @@ async function init() {
   }
 }
 
-// invoking the nit function.
+// Invoking the nit function.
 init();
